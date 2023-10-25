@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class FirstPersonCamera : MonoBehaviour
 {
-    public float mouseSensitivity = 150f;
-
     public Transform player;
 
     float xRotation = 0f;
+    float mouseSensitivity = 600f;
 
     void Start()
     {

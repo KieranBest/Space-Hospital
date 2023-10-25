@@ -32,6 +32,18 @@ public class PlayerMovement1 : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
+        // Sprinting
+        if (Input.GetKeyDown(KeyCode.LeftShift) && isGrounded && vertical > 0 && !isCrouched)
+        {
+            speed = 9f;
+            isRunning = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift) && isGrounded)
+        {
+            speed = 6f;
+            isRunning = false;
+        }
+
         // Jumping
         if (isGrounded && velocity.y < 0)
         {
@@ -44,18 +56,6 @@ public class PlayerMovement1 : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded && !isCrouched)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
-
-        // Sprinting
-        if (Input.GetKeyDown(KeyCode.LeftShift) && isGrounded && vertical > 0 && !isCrouched)
-        {
-            speed = 9f;
-            isRunning = true;
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftShift) && isGrounded)
-        {
-            speed = 6f;
-            isRunning = false;
         }
 
         // Crouching
