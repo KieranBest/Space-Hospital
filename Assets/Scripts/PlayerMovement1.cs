@@ -6,6 +6,16 @@ public class PlayerMovement1 : MonoBehaviour
 {
     public CharacterController controller;
 
+    public enum PlayerStates
+    {
+        Idle,
+        Move,
+        Attack
+    }
+
+    [SerializeField]
+    PlayerStates _currentState = PlayerStates.Idle;
+
     public float speed = 6f;
     public float gravity = -9.81f;
     public float jumpHeight = 2f;
@@ -20,9 +30,34 @@ public class PlayerMovement1 : MonoBehaviour
     bool isRunning = false;
     bool isCrouched = false;
 
-    void Update()
+    private void Update()
     {
-        // Movement
+        switch (_currentState)
+        {
+            case PlayerStates.Idle:
+                PlayerIdle();
+                break;
+            case PlayerStates.Move:
+                PlayerMovement();
+                break;
+            case PlayerStates.Attack:
+                PlayerAttack();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void PlayerIdle()
+    {
+        if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        {
+            _currentState = PlayerStates.Move;
+        }
+    }
+
+    private void PlayerMovement()
+    {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         float horizontal = Input.GetAxis("Horizontal");
@@ -71,5 +106,17 @@ public class PlayerMovement1 : MonoBehaviour
             controller.height = 3f;
             isCrouched = false;
         }
+
+        // Idle
+        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+        {
+            _currentState = PlayerStates.Idle;
+        }
+
+    }
+
+    private void PlayerAttack()
+    {
+      
     }
 }
