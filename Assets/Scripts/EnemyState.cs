@@ -63,16 +63,13 @@ public class EnemyState : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, playerMask))
         {
-            Debug.Log("true");
             _currentState = EnemyStates.Chase;
         }
         else
         {
-            Debug.Log("false");
             velocity = Vector3.zero;
             animator.SetBool("isWalking", false);
         }
-
     }
 
     private void Movement()

@@ -9,14 +9,17 @@ public class PlayerMovement1 : MonoBehaviour
     public enum PlayerStates
     {
         Idle,
-        Move,
+        Walking,
+        Running,
+        Jumping,
+        Crouching,
         Attack
     }
 
     [SerializeField]
     PlayerStates _currentState = PlayerStates.Idle;
 
-    public float speed = 6f;
+    public float speed = 5f;
     public float gravity = -9.81f;
     public float jumpHeight = 2f;
 
@@ -25,10 +28,16 @@ public class PlayerMovement1 : MonoBehaviour
     public LayerMask groundMask;
 
     Vector3 velocity;
-    Vector3 move;
+    Vector3 moveDirection;
     bool isGrounded;
     bool isRunning = false;
     bool isCrouched = false;
+    bool jumped = false;
+
+    public AudioSource audioSource;
+    public AudioClip walkingAudio;
+    public AudioClip jumpAudio;
+    public AudioClip landingAudio;
 
     private void Update()
     {
@@ -37,8 +46,17 @@ public class PlayerMovement1 : MonoBehaviour
             case PlayerStates.Idle:
                 PlayerIdle();
                 break;
-            case PlayerStates.Move:
-                PlayerMovement();
+            case PlayerStates.Walking:
+                PlayerWalkMovement();
+                break;
+            case PlayerStates.Running:
+                PlayerRunMovement();
+                break;
+            case PlayerStates.Jumping:
+                PlayerJumping();
+                break;
+            case PlayerStates.Crouching:
+                PlayerCrouching();
                 break;
             case PlayerStates.Attack:
                 PlayerAttack();
@@ -46,73 +64,166 @@ public class PlayerMovement1 : MonoBehaviour
             default:
                 break;
         }
+        Debug.Log(_currentState + " " + isGrounded);
     }
 
     private void PlayerIdle()
     {
-        if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        isGrounded = true;
+        // Movement
+        if ((Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) && isGrounded)
         {
-            _currentState = PlayerStates.Move;
+            _currentState = PlayerStates.Walking;
         }
+        // Jumping
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            _currentState = PlayerStates.Jumping;
+        }
+        // Crouching
+        if (Input.GetKeyDown(KeyCode.LeftControl) && isGrounded)
+        {
+            _currentState = PlayerStates.Crouching;
+        }
+        
     }
 
-    private void PlayerMovement()
+    private void PlayerWalkMovement()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
+        speed = 6f;
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(walkingAudio);
+        }
 
-        controller.Move(move * speed * Time.deltaTime);
+        if (isGrounded)
+        {
+            moveDirection = transform.right * horizontal + transform.forward * vertical;
+        }
+        controller.Move(speed * Time.deltaTime * moveDirection);
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
-        // Sprinting
+        // Running
         if (Input.GetKeyDown(KeyCode.LeftShift) && isGrounded && vertical > 0 && !isCrouched)
         {
-            speed = 9f;
+            _currentState = PlayerStates.Running;
             isRunning = true;
         }
-        else if (Input.GetKeyUp(KeyCode.LeftShift) && isGrounded)
-        {
-            speed = 6f;
-            isRunning = false;
-        }
-
-        // Jumping
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = -2f;
-        }
-        if (isGrounded)
-        {
-            move = transform.right * horizontal + transform.forward * vertical;
-        }
+        //Jumping
         if (Input.GetButtonDown("Jump") && isGrounded && !isCrouched)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            _currentState = PlayerStates.Jumping;
         }
-
         // Crouching
         if (Input.GetKeyDown(KeyCode.LeftControl) && isGrounded && !isRunning)
         {
-            speed = 1.5f;
-            controller.height = 1.5f;
-            isCrouched = true;
+            _currentState = PlayerStates.Crouching;
         }
-        else if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            speed = 6f;
-            controller.height = 3f;
-            isCrouched = false;
-        }
-
         // Idle
         if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
         {
+            if (isGrounded)
+            {
+                _currentState = PlayerStates.Idle;
+            }
+        }
+    }
+
+    private void PlayerRunMovement()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        speed = 9f;
+        // audio file 
+
+        if (isGrounded)
+        {
+            moveDirection = transform.right * horizontal + transform.forward * vertical;
+        }
+        controller.Move(speed * Time.deltaTime * moveDirection);
+
+        // Walking
+        if (Input.GetKeyUp(KeyCode.LeftShift) && isGrounded)
+        {
+            _currentState = PlayerStates.Walking;
+            isRunning = false;
+        }
+        // Jumping
+        if (Input.GetButtonDown("Jump") && isGrounded && !isCrouched)
+        {
+            _currentState = PlayerStates.Jumping;
+        }
+        // Idle
+        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0 && isGrounded)
+        {
             _currentState = PlayerStates.Idle;
         }
+    }
 
+    private void PlayerJumping()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        if (!jumped)
+        {
+            jumped = true;
+            velocity.y += gravity * Time.deltaTime;
+        }
+        controller.Move(speed * Time.deltaTime * moveDirection);
+        controller.Move(velocity * Time.deltaTime);
+
+        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        audioSource.PlayOneShot(jumpAudio);
+
+        // Landing
+        if (isGrounded && velocity.y < 0)
+        {
+            jumped = false;
+            velocity.y = -2f;
+            audioSource.PlayOneShot(landingAudio);
+            _currentState = PlayerStates.Idle;
+        }
+    }
+
+    private void PlayerCrouching()
+    {
+        isCrouched = true;
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        speed = 1.5f;
+        controller.height = 1.5f;
+
+        if (isGrounded)
+        {
+            moveDirection = transform.right * horizontal + transform.forward * vertical;
+        }
+        controller.Move(speed* Time.deltaTime* moveDirection);
+        velocity.y += gravity* Time.deltaTime;
+        controller.Move(velocity* Time.deltaTime);
+
+        // Standing
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            controller.height = 3f;
+            velocity.y += gravity * Time.deltaTime;
+            isCrouched = false;
+            _currentState = PlayerStates.Walking;
+        }
+        // Idle
+        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0 && Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            if (isGrounded)
+            {
+                controller.height = 3f;
+                velocity.y += gravity * Time.deltaTime;
+                isCrouched = false;
+                _currentState = PlayerStates.Idle;
+            }
+        }
     }
 
     private void PlayerAttack()
