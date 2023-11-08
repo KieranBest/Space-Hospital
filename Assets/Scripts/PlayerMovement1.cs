@@ -27,12 +27,15 @@ public class PlayerMovement1 : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
-    Vector3 velocity;
-    Vector3 moveDirection;
-    bool isGrounded;
-    bool isRunning = false;
-    bool isCrouched = false;
-    bool jumped = false;
+    private Vector3 velocity;
+    private Vector3 moveDirection;
+    private Vector3 jumpDirection;
+    private Vector3 changeDirection;
+    private bool isGrounded;
+    private bool isRunning = false;
+    private bool isCrouched = false;
+    private bool jumped = false;
+
 
     public AudioSource audioSource;
     public AudioClip walkingAudio;
@@ -64,7 +67,6 @@ public class PlayerMovement1 : MonoBehaviour
             default:
                 break;
         }
-        Debug.Log(_currentState + " " + isGrounded);
     }
 
     private void PlayerIdle()
@@ -168,16 +170,25 @@ public class PlayerMovement1 : MonoBehaviour
     private void PlayerJumping()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
         if (!jumped)
         {
             jumped = true;
-            velocity.y += gravity * Time.deltaTime;
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            jumpDirection = moveDirection;
+        }
+        else
+        {
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
+            changeDirection = transform.right * horizontal + transform.forward * vertical;
+            moveDirection = (jumpDirection + changeDirection )/2;
         }
         controller.Move(speed * Time.deltaTime * moveDirection);
         controller.Move(velocity * Time.deltaTime);
 
-        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         audioSource.PlayOneShot(jumpAudio);
+        velocity.y += gravity * Time.deltaTime;
 
         // Landing
         if (isGrounded && velocity.y < 0)
@@ -185,7 +196,38 @@ public class PlayerMovement1 : MonoBehaviour
             jumped = false;
             velocity.y = -2f;
             audioSource.PlayOneShot(landingAudio);
-            _currentState = PlayerStates.Idle;
+            if (isRunning)
+            {
+                _currentState = PlayerStates.Running;
+            }
+            else if(isCrouched && !isRunning)
+            {
+                _currentState = PlayerStates.Crouching;
+            }
+            else
+            {
+                _currentState = PlayerStates.Walking;
+            }
+        }
+        // Crouching
+        if (Input.GetKeyDown(KeyCode.LeftControl) && isGrounded && !isRunning)
+        {
+            isCrouched = true;
+        }
+        // Standing
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            isCrouched = false;
+        }
+        // Walking
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            isRunning = false;
+        }
+        // Running
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isRunning = true;
         }
     }
 
