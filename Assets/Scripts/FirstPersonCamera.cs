@@ -7,7 +7,7 @@ public class FirstPersonCamera : MonoBehaviour
     public Transform player;
 
     float xRotation = 0f;
-    float mouseSensitivity = 600f;
+    float mouseSensitivity = 35f;
 
     void Start()
     {

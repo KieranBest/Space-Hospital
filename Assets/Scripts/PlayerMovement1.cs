@@ -13,7 +13,7 @@ public class PlayerMovement1 : MonoBehaviour
         Running,
         Jumping,
         Crouching,
-        Attack
+        Torch
     }
 
     [SerializeField]
@@ -35,14 +35,14 @@ public class PlayerMovement1 : MonoBehaviour
     private bool isRunning = false;
     private bool isCrouched = false;
     private bool jumped = false;
-
+    public float height = 3f;
 
     public AudioSource audioSource;
     public AudioClip walkingAudio;
     public AudioClip jumpAudio;
     public AudioClip landingAudio;
 
-    private void Update()
+    private void FixedUpdate()
     {
         switch (_currentState)
         {
@@ -60,9 +60,6 @@ public class PlayerMovement1 : MonoBehaviour
                 break;
             case PlayerStates.Crouching:
                 PlayerCrouching();
-                break;
-            case PlayerStates.Attack:
-                PlayerAttack();
                 break;
             default:
                 break;
@@ -85,9 +82,14 @@ public class PlayerMovement1 : MonoBehaviour
         // Crouching
         if (Input.GetKeyDown(KeyCode.LeftControl) && isGrounded)
         {
+            isCrouched = true;
             _currentState = PlayerStates.Crouching;
         }
-        
+        // Torch
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+        }
     }
 
     private void PlayerWalkMovement()
@@ -123,6 +125,7 @@ public class PlayerMovement1 : MonoBehaviour
         // Crouching
         if (Input.GetKeyDown(KeyCode.LeftControl) && isGrounded && !isRunning)
         {
+            isCrouched = true;
             _currentState = PlayerStates.Crouching;
         }
         // Idle
@@ -176,6 +179,7 @@ public class PlayerMovement1 : MonoBehaviour
             jumped = true;
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             jumpDirection = moveDirection;
+            audioSource.PlayOneShot(jumpAudio);
         }
         else
         {
@@ -187,7 +191,6 @@ public class PlayerMovement1 : MonoBehaviour
         controller.Move(speed * Time.deltaTime * moveDirection);
         controller.Move(velocity * Time.deltaTime);
 
-        audioSource.PlayOneShot(jumpAudio);
         velocity.y += gravity * Time.deltaTime;
 
         // Landing
@@ -202,6 +205,7 @@ public class PlayerMovement1 : MonoBehaviour
             }
             else if(isCrouched && !isRunning)
             {
+                isCrouched = true;
                 _currentState = PlayerStates.Crouching;
             }
             else
@@ -233,43 +237,50 @@ public class PlayerMovement1 : MonoBehaviour
 
     private void PlayerCrouching()
     {
-        isCrouched = true;
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         speed = 1.5f;
-        controller.height = 1.5f;
+
+        if(height > 1.5 && isCrouched)
+        {
+            height = height - 0.25f;
+        }
+        controller.height = height;
 
         if (isGrounded)
         {
             moveDirection = transform.right * horizontal + transform.forward * vertical;
         }
-        controller.Move(speed* Time.deltaTime* moveDirection);
-        velocity.y += gravity* Time.deltaTime;
+        controller.Move(speed * Time.deltaTime* moveDirection);
+        velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity* Time.deltaTime);
 
         // Standing
-        if (Input.GetKeyUp(KeyCode.LeftControl))
+        if (Input.GetKeyUp(KeyCode.LeftControl) && isCrouched)
         {
-            controller.height = 3f;
-            velocity.y += gravity * Time.deltaTime;
+            Debug.Log("Standing");
             isCrouched = false;
-            _currentState = PlayerStates.Walking;
         }
-        // Idle
-        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0 && Input.GetKeyUp(KeyCode.LeftControl))
+        if (!isCrouched)
         {
-            if (isGrounded)
+            // Standing Up
+            controller.height = height = height + 0.25f;
+            controller.Move(speed * Time.deltaTime * moveDirection);
+            velocity.y += gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime);
+            if (height == 3f)
             {
-                controller.height = 3f;
-                velocity.y += gravity * Time.deltaTime;
-                isCrouched = false;
-                _currentState = PlayerStates.Idle;
+                // Idle
+                if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+                {
+                    _currentState = PlayerStates.Idle;
+                }
+                // Walking
+                else
+                {
+                    _currentState = PlayerStates.Walking;
+                }
             }
         }
-    }
-
-    private void PlayerAttack()
-    {
-      
     }
 }
