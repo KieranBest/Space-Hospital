@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TorchControls : MonoBehaviour
 {
     public GameObject torchController;
+
+    public StatusEffectManager statusEffectMgr;
+    public CircularProgressBar circularProgressBar;
 
     public enum TorchStates
     {
@@ -13,9 +17,10 @@ public class TorchControls : MonoBehaviour
         TorchOverHeat
     }
 
-    TorchStates _torchstate = TorchStates.TorchOff;
+    public TorchStates _torchstate = TorchStates.TorchOff;
 
     public bool torchOn = false;
+    public float duration = 10f;
 
     void Update()
     {
@@ -40,6 +45,7 @@ public class TorchControls : MonoBehaviour
         if (!torchOn)
         {
             torchOn = true;
+            statusEffectMgr.StartTorchUI(duration);
             torchController.SetActive(true);
         }
         
@@ -55,6 +61,7 @@ public class TorchControls : MonoBehaviour
         if (torchOn)
         {
             torchOn = false;
+            circularProgressBar.isActive = false;
             torchController.SetActive(false);
         }
 
@@ -67,6 +74,6 @@ public class TorchControls : MonoBehaviour
 
     private void TorchOverHeat()
     {
-
+        Debug.Log("Overheated");
     }
 }
