@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class TorchControls : MonoBehaviour
 {
-    public Light torch;
+    public GameObject torchController;
 
-
-    void Start()
-    {
-        torch = GetComponent<Light>();
-    }
     public enum TorchStates
     {
         TorchOn,
@@ -19,6 +14,8 @@ public class TorchControls : MonoBehaviour
     }
 
     TorchStates _torchstate = TorchStates.TorchOff;
+
+    public bool torchOn = false;
 
     void Update()
     {
@@ -40,9 +37,13 @@ public class TorchControls : MonoBehaviour
 
     private void TorchPowerOn()
     {
-        torch.enabled = true;
-
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (!torchOn)
+        {
+            torchOn = true;
+            torchController.SetActive(true);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Debug.Log("OFF");
             _torchstate = TorchStates.TorchOff;
@@ -51,12 +52,16 @@ public class TorchControls : MonoBehaviour
 
     private void TorchPowerOff()
     {
-        torch.enabled = false;
+        if (torchOn)
+        {
+            torchOn = false;
+            torchController.SetActive(false);
+        }
 
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Debug.Log("ON");
-            _torchstate = TorchStates.TorchOff;
+            _torchstate = TorchStates.TorchOn;
         }
     }
 
