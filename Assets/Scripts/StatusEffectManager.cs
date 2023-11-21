@@ -5,7 +5,8 @@ using UnityEngine;
 public class StatusEffectManager : MonoBehaviour
 {
     public GameObject torchUI;
-    public bool torchOn;
+    
+    private bool torchOn;
 
     public void StartTorchUI(float duration)
     {

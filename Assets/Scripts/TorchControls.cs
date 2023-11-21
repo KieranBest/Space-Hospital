@@ -19,8 +19,12 @@ public class TorchControls : MonoBehaviour
 
     public TorchStates _torchstate = TorchStates.TorchOff;
 
-    public bool torchOn = false;
     public float duration = 10f;
+    public float regenerateDuration = 5f;
+    public bool torchOverheated = false;
+
+    private bool torchOn = false;
+    private bool startedCountdown = false;
 
     void Update()
     {
@@ -51,7 +55,6 @@ public class TorchControls : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Debug.Log("OFF");
             _torchstate = TorchStates.TorchOff;
         }
     }
@@ -67,13 +70,36 @@ public class TorchControls : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Debug.Log("ON");
             _torchstate = TorchStates.TorchOn;
         }
     }
 
     private void TorchOverHeat()
     {
-        Debug.Log("Overheated");
+        if (torchOverheated)
+        {
+            torchOn = false;
+            circularProgressBar.isActive = false;
+            torchController.SetActive(false);
+            if (!startedCountdown)
+            {
+                startedCountdown = true;
+                StartCoroutine(TorchRegenerate(regenerateDuration));
+            }
+        }
+        else
+        {
+            startedCountdown = false;
+            _torchstate = TorchStates.TorchOff;
+        }
+
+
+    }
+
+    IEnumerator TorchRegenerate(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        
+        torchOverheated = false;
     }
 }

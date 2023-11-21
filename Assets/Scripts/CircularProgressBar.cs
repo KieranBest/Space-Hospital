@@ -28,8 +28,9 @@ public class CircularProgressBar : MonoBehaviour
 
             if (indicatorTimer <= 0)
             {
-                torchControls._torchstate = TorchControls.TorchStates.TorchOverHeat;
+                torchControls.torchOverheated = true;
                 StopCountdown();
+                torchControls._torchstate = TorchControls.TorchStates.TorchOverHeat;
             }
         }
         else
