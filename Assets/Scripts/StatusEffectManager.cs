@@ -6,13 +6,13 @@ public class StatusEffectManager : MonoBehaviour
 {
     public GameObject torchUI;
     
-    private bool torchOn;
+    public bool torchOn;
 
     public void StartTorchUI(float duration)
     {
         torchOn = true;
         torchUI.transform.Find("RadialProgressBar").GetComponent<CircularProgressBar>().ActiveCountdown(duration);
-
+        torchUI.transform.Find("TorchStatus").GetComponent<TorchStatusUIIndicator>();
         StartCoroutine(EndTorchUI(duration));
     }
 

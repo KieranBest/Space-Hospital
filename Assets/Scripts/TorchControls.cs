@@ -9,6 +9,8 @@ public class TorchControls : MonoBehaviour
 
     public StatusEffectManager statusEffectMgr;
     public CircularProgressBar circularProgressBar;
+    public TorchStatusUIIndicator torchStatus;
+
 
     public enum TorchStates
     {
@@ -51,6 +53,7 @@ public class TorchControls : MonoBehaviour
             torchOn = true;
             statusEffectMgr.StartTorchUI(duration);
             torchController.SetActive(true);
+            torchStatus.TorchStatusOn();
         }
         
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -64,8 +67,10 @@ public class TorchControls : MonoBehaviour
         if (torchOn)
         {
             torchOn = false;
-            circularProgressBar.isActive = false;
+            circularProgressBar.rechargeTorch = true;
+
             torchController.SetActive(false);
+            torchStatus.TorchStatusOff();
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -81,6 +86,7 @@ public class TorchControls : MonoBehaviour
             torchOn = false;
             circularProgressBar.isActive = false;
             torchController.SetActive(false);
+
             if (!startedCountdown)
             {
                 startedCountdown = true;
@@ -91,9 +97,9 @@ public class TorchControls : MonoBehaviour
         {
             startedCountdown = false;
             _torchstate = TorchStates.TorchOff;
+            torchStatus.TorchStatusOff();
         }
-
-
+        torchStatus.TorchStatusOverheated();
     }
 
     IEnumerator TorchRegenerate(float delay)

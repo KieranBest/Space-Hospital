@@ -12,13 +12,13 @@ public class CircularProgressBar : MonoBehaviour
     private float maxIndicatorTimer;
 
     public bool isActive = false;
+    public bool rechargeTorch = false;
 
     private void Awake()
     {
         radialProgressBar = GetComponent<Image>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isActive)
@@ -33,9 +33,9 @@ public class CircularProgressBar : MonoBehaviour
                 torchControls._torchstate = TorchControls.TorchStates.TorchOverHeat;
             }
         }
-        else
+        if (rechargeTorch)
         {
-            radialProgressBar.fillAmount = 1f;
+            RechargeTorch(indicatorTimer);
         }
     }
 
@@ -49,5 +49,11 @@ public class CircularProgressBar : MonoBehaviour
     public void StopCountdown()
     {
         isActive = false;
+    }
+
+    public void RechargeTorch(float chargingTime)
+    {
+        chargingTime += Time.deltaTime;
+        radialProgressBar.fillAmount = (chargingTime / maxIndicatorTimer);
     }
 }
