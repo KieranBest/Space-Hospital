@@ -25,7 +25,7 @@ public class TorchControls : MonoBehaviour
     public float regenerateDuration = 5f;
     public bool torchOverheated = false;
 
-    private bool torchOn = false;
+    public bool torchOn = false;
     private bool startedCountdown = false;
 
     void Update()
@@ -50,8 +50,8 @@ public class TorchControls : MonoBehaviour
     {
         if (!torchOn)
         {
-            torchOn = true;
             statusEffectMgr.StartTorchUI(duration);
+            torchOn = true;
             torchController.SetActive(true);
             torchStatus.TorchStatusOn();
         }
@@ -66,9 +66,9 @@ public class TorchControls : MonoBehaviour
     {
         if (torchOn)
         {
+            statusEffectMgr.stopCoroutine();
             torchOn = false;
             circularProgressBar.rechargeTorch = true;
-
             torchController.SetActive(false);
             torchStatus.TorchStatusOff();
         }

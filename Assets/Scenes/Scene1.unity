@@ -13186,7 +13186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torchUI: {fileID: 408960391}
-  torchOn: 0
+  torchControls: {fileID: 1557797304}
 --- !u!4 &637655123
 Transform:
   m_ObjectHideFlags: 0
@@ -14839,6 +14839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torchControls: {fileID: 1557797304}
   isActive: 0
+  rechargeTorch: 0
 --- !u!1001 &707170099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32284,6 +32285,7 @@ MonoBehaviour:
   duration: 10
   regenerateDuration: 5
   torchOverheated: 0
+  torchOn: 0
 --- !u!1001 &1559164418
 PrefabInstance:
   m_ObjectHideFlags: 0
