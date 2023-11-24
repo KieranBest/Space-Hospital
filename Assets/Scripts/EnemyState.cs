@@ -3,7 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyState : MonoBehaviour
-{
+{    
+    private Animator animator;
+    private RaycastHit hit;
+
+    public CharacterController enemyController;
+    public Transform player;
+    public Transform groundCheck;
+    public LayerMask playerMask;
+    public LayerMask groundMask;
+
+    private Vector3 velocity = Vector3.zero;
+    private Vector3 direction = Vector3.zero;
+    private float speed = 2.25f;
+    private float gravity = 9.81f;
+    private float groundDistance = 0.4f;
+
+    public bool isGrounded;
+
     public enum EnemyStates
     {
         Idle,
@@ -13,28 +30,6 @@ public class EnemyState : MonoBehaviour
 
     [SerializeField]
     EnemyStates _currentState = EnemyStates.Idle;
-
-    [SerializeField]
-    private float speed = 2.25f;
-    private float gravity = 9.81f;
-
-    public CharacterController enemyController;
-    public Transform player;
-
-    private Vector3 velocity = Vector3.zero;
-    private Vector3 direction = Vector3.zero;
-
-    public Transform groundCheck;
-    private float groundDistance = 0.4f;
-    public LayerMask groundMask;
-
-    bool isGrounded;
-
-    RaycastHit hit;
-    public LayerMask playerMask;
-
-    Animator animator;
-
 
     private void Start()
     {

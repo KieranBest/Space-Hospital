@@ -5,6 +5,29 @@ using UnityEngine;
 public class PlayerMovement1 : MonoBehaviour
 {
     public CharacterController controller;
+    public AudioSource audioSource;
+    public AudioClip walkingAudio;
+    public AudioClip jumpAudio;
+    public AudioClip landingAudio;
+    public Transform groundCheck;
+
+    private Vector3 velocity;
+    private Vector3 moveDirection;
+    private Vector3 jumpDirection;
+    private Vector3 changeDirection;
+
+    public LayerMask groundMask;
+
+    private bool isGrounded;
+    private bool isRunning = false;
+    private bool isCrouched = false;
+    private bool jumped = false;
+
+    public float speed = 5f;
+    public float gravity = -9.81f;
+    public float jumpHeight = 2f;
+    public float groundDistance = 0.4f;
+    public float height = 3f;
 
     public enum PlayerStates
     {
@@ -18,29 +41,6 @@ public class PlayerMovement1 : MonoBehaviour
 
     [SerializeField]
     PlayerStates _currentState = PlayerStates.Idle;
-
-    public float speed = 5f;
-    public float gravity = -9.81f;
-    public float jumpHeight = 2f;
-
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
-
-    private Vector3 velocity;
-    private Vector3 moveDirection;
-    private Vector3 jumpDirection;
-    private Vector3 changeDirection;
-    private bool isGrounded;
-    private bool isRunning = false;
-    private bool isCrouched = false;
-    private bool jumped = false;
-    public float height = 3f;
-
-    public AudioSource audioSource;
-    public AudioClip walkingAudio;
-    public AudioClip jumpAudio;
-    public AudioClip landingAudio;
 
     private void FixedUpdate()
     {
@@ -258,7 +258,6 @@ public class PlayerMovement1 : MonoBehaviour
         // Standing
         if (Input.GetKeyUp(KeyCode.LeftControl) && isCrouched)
         {
-            Debug.Log("Standing");
             isCrouched = false;
         }
         if (!isCrouched)

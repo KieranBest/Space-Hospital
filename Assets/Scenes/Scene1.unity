@@ -13187,6 +13187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torchUI: {fileID: 408960391}
   torchControls: {fileID: 1557797304}
+  torchStatus: {fileID: 1459299107}
 --- !u!4 &637655123
 Transform:
   m_ObjectHideFlags: 0
@@ -14838,8 +14839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torchControls: {fileID: 1557797304}
-  isActive: 0
-  rechargeTorch: 0
+  torchStatus: {fileID: 1459299107}
 --- !u!1001 &707170099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30454,7 +30454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f39212eb6408a647a36487d6fe597f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torchControls: {fileID: 0}
+  torchControls: {fileID: 1557797304}
+  flashRed: 0
 --- !u!114 &1459299108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32147,20 +32148,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1557797298}
-  _currentState: 0
-  speed: 5
-  gravity: -19.62
-  jumpHeight: 2
-  groundCheck: {fileID: 1362746039}
-  groundDistance: 0.4
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
-  height: 3
   audioSource: {fileID: 1557797303}
   walkingAudio: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
   jumpAudio: {fileID: 8300000, guid: 5897aeed9b676024fbb8c694b421a861, type: 3}
   landingAudio: {fileID: 8300000, guid: 3b09d59f4499d45428baa7a21e954296, type: 3}
+  groundCheck: {fileID: 1362746039}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  speed: 5
+  gravity: -19.62
+  jumpHeight: 2
+  groundDistance: 0.4
+  height: 3
+  _currentState: 0
 --- !u!81 &1557797302
 AudioListener:
   m_ObjectHideFlags: 0
@@ -37425,17 +37426,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2515146a6be47243bec71a9849ad820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentState: 0
-  speed: 2
   enemyController: {fileID: 1796712777}
   player: {fileID: 1557797299}
   groundCheck: {fileID: 1195558371}
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
   playerMask:
     serializedVersion: 2
     m_Bits: 8
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
+  isGrounded: 0
+  _currentState: 0
 --- !u!4 &1796779215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4410478108094232624, guid: 7e3f523375a441341abd337ac986d569, type: 3}

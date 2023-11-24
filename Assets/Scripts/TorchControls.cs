@@ -6,11 +6,9 @@ using UnityEngine.UI;
 public class TorchControls : MonoBehaviour
 {
     public GameObject torchController;
-
     public StatusEffectManager statusEffectMgr;
     public CircularProgressBar circularProgressBar;
     public TorchStatusUIIndicator torchStatus;
-
 
     public enum TorchStates
     {
@@ -24,9 +22,7 @@ public class TorchControls : MonoBehaviour
     public float duration = 10f;
     public float regenerateDuration = 5f;
     public bool torchOverheated = false;
-
     public bool torchOn = false;
-    private bool startedCountdown = false;
 
     void Update()
     {
@@ -51,11 +47,11 @@ public class TorchControls : MonoBehaviour
         if (!torchOn)
         {
             statusEffectMgr.StartTorchUI(duration);
-            torchOn = true;
             torchController.SetActive(true);
             torchStatus.TorchStatusOn();
         }
         
+        // Turn Torch Off
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             _torchstate = TorchStates.TorchOff;
@@ -66,13 +62,12 @@ public class TorchControls : MonoBehaviour
     {
         if (torchOn)
         {
-            statusEffectMgr.stopCoroutine();
             torchOn = false;
-            circularProgressBar.rechargeTorch = true;
             torchController.SetActive(false);
             torchStatus.TorchStatusOff();
         }
 
+        // Turn Torch On
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             _torchstate = TorchStates.TorchOn;
@@ -81,31 +76,17 @@ public class TorchControls : MonoBehaviour
 
     private void TorchOverHeat()
     {
+        // Torch Overheated
         if (torchOverheated)
         {
             torchOn = false;
-            circularProgressBar.isActive = false;
             torchController.SetActive(false);
-
-            if (!startedCountdown)
-            {
-                startedCountdown = true;
-                StartCoroutine(TorchRegenerate(regenerateDuration));
-            }
+            torchStatus.TorchStatusOverheated();
         }
+        // Torch Cooled Down
         else
         {
-            startedCountdown = false;
             _torchstate = TorchStates.TorchOff;
-            torchStatus.TorchStatusOff();
         }
-        torchStatus.TorchStatusOverheated();
-    }
-
-    IEnumerator TorchRegenerate(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        
-        torchOverheated = false;
     }
 }

@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class TorchStatusUIIndicator : MonoBehaviour
 {
     private Image TorchStatus;
-
     public TorchControls torchControls;
 
-    private bool flashRed = false;
     private float flashSpeed = 0.33f;
+
+    public bool flashRed = false;
 
     private void Awake()
     {
@@ -29,16 +29,17 @@ public class TorchStatusUIIndicator : MonoBehaviour
 
     public void TorchStatusOverheated()
     {
+        // If overheat flashing is not active, set active
         if (!flashRed)
-        {        
+        {
             flashRed = true;
-            TorchStatus.GetComponent<Image>().color = new Color(255, 0, 0, 0.5f);
             StartCoroutine(OverheatFlash(flashSpeed));
         }
     }
 
     IEnumerator OverheatFlash(float delay)
     {
+        TorchStatus.GetComponent<Image>().color = new Color(255, 0, 0, 0.5f);
         yield return new WaitForSeconds(delay);
         TorchStatus.GetComponent<Image>().color = new Color(0, 0, 0, 0.5f);
         yield return new WaitForSeconds(delay);
