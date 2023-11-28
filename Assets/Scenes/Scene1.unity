@@ -328,7 +328,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (9)
+      value: Hanging Light (7)
       objectReference: {fileID: 0}
     - target: {fileID: 7125589774974728447, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_RootOrder
@@ -486,7 +486,7 @@ GameObject:
   - component: {fileID: 15337901}
   - component: {fileID: 15337902}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -785,7 +785,14 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1019880851}
+  - {fileID: 1061386420}
+  - {fileID: 1230689532}
+  - {fileID: 546279016}
+  - {fileID: 1958761006}
+  - {fileID: 894292814}
+  - {fileID: 1222140986}
   m_Father: {fileID: 1128253710}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -801,13 +808,106 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14ef0f479ba52441a6011118202a4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoomA1a: {fileID: 15337902}
-  RoomA1b: {fileID: 1801162370}
-  RoomA2a: {fileID: 1263219929}
-  RoomA2b: {fileID: 818633880}
-  RoomA3a: {fileID: 167870371}
-  RoomA3b: {fileID: 908125136}
-  RoomALight: 1
+  RoomA1a: {fileID: 908125134}
+  RoomA1b: {fileID: 167870369}
+  RoomA2a: {fileID: 818633878}
+  RoomA2b: {fileID: 1263219927}
+  RoomA3a: {fileID: 1801162368}
+  RoomA3b: {fileID: 15337900}
+  RoomB1a: {fileID: 2078028494}
+  RoomB1b: {fileID: 2138607468}
+  RoomB2a: {fileID: 1151181844}
+  RoomB2b: {fileID: 654805282}
+  RoomB3a: {fileID: 334686815}
+  RoomB3b: {fileID: 699555206}
+  RoomB4a: {fileID: 142434438}
+  RoomB4b: {fileID: 822126643}
+  RoomB5a: {fileID: 1098870951}
+  RoomB5b: {fileID: 1614297821}
+  RoomB6a: {fileID: 986735247}
+  RoomB6b: {fileID: 1936752612}
+  RoomB7a: {fileID: 656464077}
+  RoomB7b: {fileID: 270091621}
+  RoomB8a: {fileID: 972948223}
+  RoomB8b: {fileID: 196863994}
+  RoomB9a: {fileID: 696500666}
+  RoomB9b: {fileID: 2004600507}
+  RoomB10a: {fileID: 1378622305}
+  RoomB10b: {fileID: 26501593}
+  RoomB11a: {fileID: 521676737}
+  RoomB11b: {fileID: 1591698858}
+  RoomB12a: {fileID: 1831324059}
+  RoomB12b: {fileID: 1126938412}
+  RoomB13a: {fileID: 675100543}
+  RoomB13b: {fileID: 2002289263}
+  RoomB14a: {fileID: 964879366}
+  RoomB14b: {fileID: 264013884}
+  RoomB15a: {fileID: 1899352570}
+  RoomB15b: {fileID: 574457148}
+  RoomB16a: {fileID: 1000449320}
+  RoomB16b: {fileID: 1408606272}
+  RoomB17a: {fileID: 1770478474}
+  RoomB17b: {fileID: 605528658}
+  RoomB18a: {fileID: 1147505461}
+  RoomB18b: {fileID: 1245585092}
+  RoomB19a: {fileID: 979300474}
+  RoomB19b: {fileID: 126677976}
+  RoomB20a: {fileID: 2145268095}
+  RoomB20b: {fileID: 349997468}
+  RoomB21a: {fileID: 1238275135}
+  RoomB21b: {fileID: 1641230123}
+  RoomB22a: {fileID: 1806699307}
+  RoomB22b: {fileID: 2010465105}
+  RoomB23a: {fileID: 195322412}
+  RoomB23b: {fileID: 1307111478}
+  RoomB24a: {fileID: 977586111}
+  RoomB24b: {fileID: 2086673844}
+  RoomC1a: {fileID: 1071589280}
+  RoomC1b: {fileID: 1236912945}
+  RoomC2a: {fileID: 1288354518}
+  RoomC2b: {fileID: 131812202}
+  RoomC3a: {fileID: 92175811}
+  RoomC3b: {fileID: 763698784}
+  RoomC4a: {fileID: 1636129788}
+  RoomC4b: {fileID: 2138024215}
+  RoomC5a: {fileID: 1560184230}
+  RoomC5b: {fileID: 1176587689}
+  RoomC6a: {fileID: 1568170399}
+  RoomC6b: {fileID: 1566563755}
+  RoomC7a: {fileID: 1710224718}
+  RoomC7b: {fileID: 2003666428}
+  RoomC8a: {fileID: 2072486326}
+  RoomC8b: {fileID: 1644346154}
+  RoomD1a: {fileID: 211170802}
+  RoomD1b: {fileID: 747606319}
+  RoomD2a: {fileID: 548361526}
+  RoomD2b: {fileID: 344100434}
+  RoomD3a: {fileID: 90105645}
+  RoomD3b: {fileID: 739336692}
+  RoomD4a: {fileID: 1766384386}
+  RoomD4b: {fileID: 1110456592}
+  RoomD5a: {fileID: 1173439265}
+  RoomD5b: {fileID: 1160828324}
+  RoomD6a: {fileID: 1918136911}
+  RoomD6b: {fileID: 948300340}
+  RoomD7a: {fileID: 1274614471}
+  RoomD7b: {fileID: 615259099}
+  RoomD8a: {fileID: 1294360090}
+  RoomD8b: {fileID: 326669746}
+  SRoom1a: {fileID: 488760881}
+  SRoom1b: {fileID: 1567010823}
+  SRoom2a: {fileID: 1152753365}
+  SRoom2b: {fileID: 1866726309}
+  RoomAOn: 1
+  RoomBOn: 1
+  RoomCOn: 1
+  RoomDOn: 1
+  StorageOn: 1
+  RoomA: 0
+  RoomB: 0
+  RoomC: 0
+  RoomD: 0
+  StorageRooms: 0
 --- !u!4 &22492054 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1609829962470302593, guid: dafe2f44374925b4692cd6dbc587c068, type: 3}
@@ -895,7 +995,7 @@ GameObject:
   - component: {fileID: 26501594}
   - component: {fileID: 26501595}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2519,7 +2619,7 @@ GameObject:
   - component: {fileID: 126677977}
   - component: {fileID: 126677978}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2612,7 +2712,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (20)
+      value: Hanging Light (18)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2755,7 +2855,7 @@ GameObject:
   - component: {fileID: 131812203}
   - component: {fileID: 131812204}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3052,7 +3152,7 @@ GameObject:
   - component: {fileID: 142434439}
   - component: {fileID: 142434440}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3577,7 +3677,7 @@ GameObject:
   - component: {fileID: 167870370}
   - component: {fileID: 167870371}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4033,12 +4133,12 @@ GameObject:
   - component: {fileID: 195322413}
   - component: {fileID: 195322414}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &195322413
 Transform:
   m_ObjectHideFlags: 0
@@ -4127,7 +4227,7 @@ GameObject:
   - component: {fileID: 196863995}
   - component: {fileID: 196863996}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4447,22 +4547,22 @@ Transform:
   - {fileID: 1811197254}
   - {fileID: 353483905}
   - {fileID: 501475170}
-  - {fileID: 1529397854}
   - {fileID: 1800585370}
-  - {fileID: 1037705223}
   - {fileID: 1274350970}
   - {fileID: 413474284}
   - {fileID: 1616302366}
-  - {fileID: 1119260141}
   - {fileID: 1250107415}
   - {fileID: 1863508776}
-  - {fileID: 515350194}
   - {fileID: 137367972}
   - {fileID: 145076778}
+  - {fileID: 1037705223}
+  - {fileID: 1119260141}
+  - {fileID: 515350194}
   - {fileID: 1845754603}
   - {fileID: 1554597644}
   - {fileID: 1668050746}
   - {fileID: 669529351}
+  - {fileID: 1529397854}
   m_Father: {fileID: 546279016}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4477,7 +4577,7 @@ GameObject:
   - component: {fileID: 211170803}
   - component: {fileID: 211170804}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5062,7 +5162,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (17)
+      value: Hanging Light (15)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5214,7 +5314,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (2)
+      value: Hanging Light (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7125589774974728447, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_RootOrder
@@ -5736,7 +5836,7 @@ GameObject:
   - component: {fileID: 264013885}
   - component: {fileID: 264013886}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5830,7 +5930,7 @@ GameObject:
   - component: {fileID: 270091622}
   - component: {fileID: 270091623}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6514,7 +6614,7 @@ GameObject:
   - component: {fileID: 326669747}
   - component: {fileID: 326669748}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7202,7 +7302,7 @@ GameObject:
   - component: {fileID: 344100435}
   - component: {fileID: 344100436}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7528,7 +7628,7 @@ GameObject:
   - component: {fileID: 349997469}
   - component: {fileID: 349997470}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9265,7 +9365,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (8)
+      value: Hanging Light (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -9819,7 +9919,7 @@ GameObject:
   - component: {fileID: 488760882}
   - component: {fileID: 488760883}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9847,7 +9947,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488760881}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -10567,7 +10667,7 @@ GameObject:
   - component: {fileID: 521676738}
   - component: {fileID: 521676739}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10660,7 +10760,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (11)
+      value: Hanging Light (9)
       objectReference: {fileID: 0}
     - target: {fileID: 7125589774974728447, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_RootOrder
@@ -11141,7 +11241,7 @@ Transform:
   m_Children:
   - {fileID: 1174068554}
   - {fileID: 210478052}
-  m_Father: {fileID: 1128253710}
+  m_Father: {fileID: 20460953}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &548361526
@@ -11155,7 +11255,7 @@ GameObject:
   - component: {fileID: 548361527}
   - component: {fileID: 548361528}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11248,7 +11348,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (22)
+      value: Hanging Light (20)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -11655,7 +11755,7 @@ GameObject:
   - component: {fileID: 574457149}
   - component: {fileID: 574457150}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12340,7 +12440,7 @@ GameObject:
   - component: {fileID: 605528659}
   - component: {fileID: 605528660}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12565,7 +12665,7 @@ GameObject:
   - component: {fileID: 615259100}
   - component: {fileID: 615259101}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13585,7 +13685,7 @@ GameObject:
   - component: {fileID: 654805283}
   - component: {fileID: 654805284}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13745,7 +13845,7 @@ GameObject:
   - component: {fileID: 656464078}
   - component: {fileID: 656464079}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14141,7 +14241,7 @@ GameObject:
   - component: {fileID: 675100544}
   - component: {fileID: 675100545}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14338,7 +14438,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (24)
+      value: Hanging Light (22)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -14476,7 +14576,7 @@ GameObject:
   - component: {fileID: 696500667}
   - component: {fileID: 696500668}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14652,7 +14752,7 @@ GameObject:
   - component: {fileID: 699555207}
   - component: {fileID: 699555208}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15475,7 +15575,7 @@ GameObject:
   - component: {fileID: 739336693}
   - component: {fileID: 739336694}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15663,7 +15763,7 @@ GameObject:
   - component: {fileID: 747606320}
   - component: {fileID: 747606321}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15866,7 +15966,7 @@ GameObject:
   - component: {fileID: 763698785}
   - component: {fileID: 763698786}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16043,7 +16143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779834748}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.312791, y: 6.9193535, z: -8.366242}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16082,7 +16182,7 @@ Transform:
   - {fileID: 692591494}
   - {fileID: 1424187273}
   - {fileID: 953520773}
-  m_Father: {fileID: 1128253710}
+  m_Father: {fileID: 1230689532}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &782983942 stripped
@@ -16175,7 +16275,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (8)
+      value: Hanging Light (6)
       objectReference: {fileID: 0}
     - target: {fileID: 7125589774974728447, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_RootOrder
@@ -16822,7 +16922,7 @@ GameObject:
   - component: {fileID: 822126644}
   - component: {fileID: 822126645}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17402,7 +17502,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (7)
+      value: Hanging Light (5)
       objectReference: {fileID: 0}
     - target: {fileID: 7125589774974728447, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_RootOrder
@@ -17809,7 +17909,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (23)
+      value: Hanging Light (21)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -18063,7 +18163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 894292814}
   m_Layer: 0
-  m_Name: RoomD
+  m_Name: StorageRoomA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18083,7 +18183,7 @@ Transform:
   m_Children:
   - {fileID: 526645408}
   - {fileID: 1148165349}
-  m_Father: {fileID: 1128253710}
+  m_Father: {fileID: 20460953}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &894598931
@@ -18283,7 +18383,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (6)
+      value: Hanging Light (4)
       objectReference: {fileID: 0}
     - target: {fileID: 7125589774974728447, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_RootOrder
@@ -18776,22 +18876,22 @@ Transform:
   - {fileID: 196880761}
   - {fileID: 571055423}
   - {fileID: 2090722282}
-  - {fileID: 62176012}
   - {fileID: 1386106886}
-  - {fileID: 1872413090}
-  - {fileID: 2123569998}
   - {fileID: 924088221}
   - {fileID: 893836649}
-  - {fileID: 1153192562}
   - {fileID: 1005379351}
   - {fileID: 836836945}
-  - {fileID: 341139925}
   - {fileID: 411595049}
   - {fileID: 1092531812}
+  - {fileID: 2123569998}
+  - {fileID: 1872413090}
+  - {fileID: 1153192562}
+  - {fileID: 341139925}
   - {fileID: 445729285}
   - {fileID: 219651033}
   - {fileID: 338107238}
   - {fileID: 1005168805}
+  - {fileID: 62176012}
   m_Father: {fileID: 1958761006}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19035,7 +19135,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (12)
+      value: Hanging Light (10)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -19198,7 +19298,7 @@ GameObject:
   - component: {fileID: 948300341}
   - component: {fileID: 948300342}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19356,7 +19456,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (26)
+      value: Hanging Light (24)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -19432,7 +19532,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (16)
+      value: Hanging Light (14)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -19708,7 +19808,7 @@ GameObject:
   - component: {fileID: 964879367}
   - component: {fileID: 964879368}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19948,7 +20048,7 @@ GameObject:
   - component: {fileID: 972948224}
   - component: {fileID: 972948225}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20168,7 +20268,7 @@ GameObject:
   - component: {fileID: 977586112}
   - component: {fileID: 977586113}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20327,7 +20427,7 @@ GameObject:
   - component: {fileID: 979300475}
   - component: {fileID: 979300476}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20421,7 +20521,7 @@ GameObject:
   - component: {fileID: 986735248}
   - component: {fileID: 986735249}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20887,7 +20987,7 @@ GameObject:
   - component: {fileID: 1000449321}
   - component: {fileID: 1000449322}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21159,7 +21259,7 @@ Transform:
   m_Children:
   - {fileID: 343660568}
   - {fileID: 1654114733}
-  m_Father: {fileID: 1128253710}
+  m_Father: {fileID: 20460953}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1020598663
@@ -21172,7 +21272,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (18)
+      value: Hanging Light (16)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -21817,7 +21917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1061386420}
   m_Layer: 0
-  m_Name: StorageRoomA
+  m_Name: RoomA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21837,7 +21937,7 @@ Transform:
   m_Children:
   - {fileID: 1326841960}
   - {fileID: 2043722202}
-  m_Father: {fileID: 1128253710}
+  m_Father: {fileID: 20460953}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1063756462
@@ -22100,7 +22200,7 @@ GameObject:
   - component: {fileID: 1071589281}
   - component: {fileID: 1071589282}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22325,7 +22425,7 @@ GameObject:
   - component: {fileID: 1098870952}
   - component: {fileID: 1098870953}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22714,7 +22814,7 @@ GameObject:
   - component: {fileID: 1110456593}
   - component: {fileID: 1110456594}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22868,7 +22968,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (3)
+      value: Hanging Light (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7125589774974728447, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_RootOrder
@@ -23032,7 +23132,7 @@ GameObject:
   - component: {fileID: 1126938413}
   - component: {fileID: 1126938414}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23143,17 +23243,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1019880851}
-  - {fileID: 1061386420}
-  - {fileID: 1230689532}
-  - {fileID: 1516365163}
-  - {fileID: 779834749}
-  - {fileID: 546279016}
-  - {fileID: 894292814}
-  - {fileID: 1222140986}
-  - {fileID: 1958761006}
-  - {fileID: 180118511}
   - {fileID: 20460953}
+  - {fileID: 180118511}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -23495,7 +23586,7 @@ GameObject:
   - component: {fileID: 1147505462}
   - component: {fileID: 1147505463}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23780,7 +23871,7 @@ GameObject:
   - component: {fileID: 1151181845}
   - component: {fileID: 1151181846}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23874,7 +23965,7 @@ GameObject:
   - component: {fileID: 1152753366}
   - component: {fileID: 1152753367}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24193,7 +24284,7 @@ GameObject:
   - component: {fileID: 1160828325}
   - component: {fileID: 1160828326}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24565,7 +24656,7 @@ GameObject:
   - component: {fileID: 1173439266}
   - component: {fileID: 1173439267}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24771,7 +24862,7 @@ GameObject:
   - component: {fileID: 1176587690}
   - component: {fileID: 1176587691}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25934,7 +26025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1222140986}
   m_Layer: 0
-  m_Name: RoomE
+  m_Name: StorageRoomB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25954,7 +26045,7 @@ Transform:
   m_Children:
   - {fileID: 1168344720}
   - {fileID: 1313983185}
-  m_Father: {fileID: 1128253710}
+  m_Father: {fileID: 20460953}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &1226584021 stripped
@@ -26083,8 +26174,10 @@ Transform:
   m_LocalPosition: {x: -15.312791, y: 6.9193535, z: -8.366242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1128253710}
+  m_Children:
+  - {fileID: 1516365163}
+  - {fileID: 779834749}
+  m_Father: {fileID: 20460953}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1233217560
@@ -26225,7 +26318,7 @@ GameObject:
   - component: {fileID: 1236912946}
   - component: {fileID: 1236912947}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26319,12 +26412,12 @@ GameObject:
   - component: {fileID: 1238275136}
   - component: {fileID: 1238275137}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1238275136
 Transform:
   m_ObjectHideFlags: 0
@@ -26549,7 +26642,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (10)
+      value: Hanging Light (8)
       objectReference: {fileID: 0}
     - target: {fileID: 7125589774974728447, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_RootOrder
@@ -26622,7 +26715,7 @@ GameObject:
   - component: {fileID: 1245585093}
   - component: {fileID: 1245585094}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26923,7 +27016,7 @@ GameObject:
   - component: {fileID: 1263219928}
   - component: {fileID: 1263219929}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27143,7 +27236,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (19)
+      value: Hanging Light (17)
       objectReference: {fileID: 0}
     - target: {fileID: 7125589774974728447, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_RootOrder
@@ -27282,7 +27375,7 @@ GameObject:
   - component: {fileID: 1274614472}
   - component: {fileID: 1274614473}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27451,7 +27544,7 @@ GameObject:
   - component: {fileID: 1288354519}
   - component: {fileID: 1288354520}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27550,7 +27643,7 @@ GameObject:
   - component: {fileID: 1294360091}
   - component: {fileID: 1294360092}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27900,12 +27993,12 @@ GameObject:
   - component: {fileID: 1307111479}
   - component: {fileID: 1307111480}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1307111479
 Transform:
   m_ObjectHideFlags: 0
@@ -28621,7 +28714,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (1)
+      value: Hanging Light (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7125589774974728447, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_RootOrder
@@ -29073,7 +29166,7 @@ GameObject:
   - component: {fileID: 1378622306}
   - component: {fileID: 1378622307}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29576,7 +29669,7 @@ GameObject:
   - component: {fileID: 1408606273}
   - component: {fileID: 1408606274}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29804,7 +29897,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (25)
+      value: Hanging Light (23)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -30801,7 +30894,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light
+      value: Hanging Light (8)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -31179,7 +31272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516365162}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.312791, y: 6.9193535, z: -8.366242}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31320,7 +31413,7 @@ Transform:
   - {fileID: 1685975575}
   - {fileID: 483425719}
   - {fileID: 1501910152}
-  m_Father: {fileID: 1128253710}
+  m_Father: {fileID: 1230689532}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1517401953
@@ -31764,7 +31857,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light
+      value: Hanging Light (8)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -32411,7 +32504,7 @@ GameObject:
   - component: {fileID: 1560184231}
   - component: {fileID: 1560184232}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32504,7 +32597,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (5)
+      value: Hanging Light (3)
       objectReference: {fileID: 0}
     - target: {fileID: 7125589774974728447, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_RootOrder
@@ -32582,7 +32675,7 @@ GameObject:
   - component: {fileID: 1566563756}
   - component: {fileID: 1566563757}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32676,7 +32769,7 @@ GameObject:
   - component: {fileID: 1567010824}
   - component: {fileID: 1567010825}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32704,7 +32797,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567010823}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -32770,7 +32863,7 @@ GameObject:
   - component: {fileID: 1568170400}
   - component: {fileID: 1568170401}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33059,7 +33152,7 @@ GameObject:
   - component: {fileID: 1591698859}
   - component: {fileID: 1591698860}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33585,7 +33678,7 @@ GameObject:
   - component: {fileID: 1614297822}
   - component: {fileID: 1614297823}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34032,7 +34125,7 @@ GameObject:
   - component: {fileID: 1636129789}
   - component: {fileID: 1636129790}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34191,12 +34284,12 @@ GameObject:
   - component: {fileID: 1641230124}
   - component: {fileID: 1641230125}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1641230124
 Transform:
   m_ObjectHideFlags: 0
@@ -34350,7 +34443,7 @@ GameObject:
   - component: {fileID: 1644346155}
   - component: {fileID: 1644346156}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35953,7 +36046,7 @@ GameObject:
   - component: {fileID: 1710224719}
   - component: {fileID: 1710224720}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36683,7 +36776,7 @@ GameObject:
   - component: {fileID: 1766384387}
   - component: {fileID: 1766384388}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36946,7 +37039,7 @@ GameObject:
   - component: {fileID: 1770478475}
   - component: {fileID: 1770478476}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37933,12 +38026,12 @@ GameObject:
   - component: {fileID: 1806699308}
   - component: {fileID: 1806699309}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1806699308
 Transform:
   m_ObjectHideFlags: 0
@@ -38381,7 +38474,7 @@ GameObject:
   - component: {fileID: 1831324060}
   - component: {fileID: 1831324061}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38757,7 +38850,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (21)
+      value: Hanging Light (19)
       objectReference: {fileID: 0}
     - target: {fileID: 7125589774974728447, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_RootOrder
@@ -39210,7 +39303,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (15)
+      value: Hanging Light (13)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -39287,7 +39380,7 @@ GameObject:
   - component: {fileID: 1866726310}
   - component: {fileID: 1866726311}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39966,7 +40059,7 @@ GameObject:
   - component: {fileID: 1899352571}
   - component: {fileID: 1899352572}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40120,7 +40213,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (13)
+      value: Hanging Light (11)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -40258,7 +40351,7 @@ GameObject:
   - component: {fileID: 1918136912}
   - component: {fileID: 1918136913}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40361,7 +40454,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (4)
+      value: Hanging Light (2)
       objectReference: {fileID: 0}
     - target: {fileID: 7125589774974728447, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_RootOrder
@@ -40686,7 +40779,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (8)
+      value: Hanging Light (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -40902,7 +40995,7 @@ GameObject:
   - component: {fileID: 1936752613}
   - component: {fileID: 1936752614}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41238,7 +41331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1958761006}
   m_Layer: 0
-  m_Name: RoomF
+  m_Name: RoomD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41258,7 +41351,7 @@ Transform:
   m_Children:
   - {fileID: 2049044593}
   - {fileID: 914831558}
-  m_Father: {fileID: 1128253710}
+  m_Father: {fileID: 20460953}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1962838343
@@ -41777,7 +41870,7 @@ GameObject:
   - component: {fileID: 2002289264}
   - component: {fileID: 2002289265}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41871,7 +41964,7 @@ GameObject:
   - component: {fileID: 2003666429}
   - component: {fileID: 2003666430}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42070,7 +42163,7 @@ GameObject:
   - component: {fileID: 2004600508}
   - component: {fileID: 2004600509}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42234,12 +42327,12 @@ GameObject:
   - component: {fileID: 2010465106}
   - component: {fileID: 2010465107}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2010465106
 Transform:
   m_ObjectHideFlags: 0
@@ -43361,7 +43454,7 @@ GameObject:
   - component: {fileID: 2072486327}
   - component: {fileID: 2072486328}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43522,7 +43615,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6104761224871856876, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Name
-      value: Hanging Light (14)
+      value: Hanging Light (12)
       objectReference: {fileID: 0}
     - target: {fileID: 6779380336776852517, guid: 9f50fdb071f54674f8166b46f510ad84, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -43599,7 +43692,7 @@ GameObject:
   - component: {fileID: 2078028495}
   - component: {fileID: 2078028496}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43703,7 +43796,7 @@ GameObject:
   - component: {fileID: 2086673845}
   - component: {fileID: 2086673846}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44572,7 +44665,7 @@ GameObject:
   - component: {fileID: 2138024216}
   - component: {fileID: 2138024217}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44666,7 +44759,7 @@ GameObject:
   - component: {fileID: 2138607469}
   - component: {fileID: 2138607470}
   m_Layer: 0
-  m_Name: Dim Point Light
+  m_Name: Dim Point Light 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44987,7 +45080,7 @@ GameObject:
   - component: {fileID: 2145268096}
   - component: {fileID: 2145268097}
   m_Layer: 0
-  m_Name: Dim Point Light (3)
+  m_Name: Dim Point Light (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

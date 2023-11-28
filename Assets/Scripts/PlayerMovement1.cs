@@ -36,7 +36,6 @@ public class PlayerMovement1 : MonoBehaviour
         Running,
         Jumping,
         Crouching,
-        Torch
     }
 
     [SerializeField]
@@ -85,11 +84,6 @@ public class PlayerMovement1 : MonoBehaviour
             isCrouched = true;
             _currentState = PlayerStates.Crouching;
         }
-        // Torch
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-
-        }
     }
 
     private void PlayerWalkMovement()
@@ -117,7 +111,7 @@ public class PlayerMovement1 : MonoBehaviour
             _currentState = PlayerStates.Running;
             isRunning = true;
         }
-        //Jumping
+        // Jumping
         if (Input.GetButtonDown("Jump") && isGrounded && !isCrouched)
         {
             _currentState = PlayerStates.Jumping;
@@ -144,7 +138,7 @@ public class PlayerMovement1 : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         speed = 9f;
-        // audio file 
+        // Audio File 
 
         if (isGrounded)
         {
@@ -188,9 +182,9 @@ public class PlayerMovement1 : MonoBehaviour
             changeDirection = transform.right * horizontal + transform.forward * vertical;
             moveDirection = (jumpDirection + changeDirection )/2;
         }
+
         controller.Move(speed * Time.deltaTime * moveDirection);
         controller.Move(velocity * Time.deltaTime);
-
         velocity.y += gravity * Time.deltaTime;
 
         // Landing
