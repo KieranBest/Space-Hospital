@@ -111,19 +111,22 @@ public class LightManager : MonoBehaviour
     public bool RoomBOn = true;
     public bool RoomCOn = true;
     public bool RoomDOn = true;
-    public bool StorageOn = true;
+    public bool Storage1On = true;
+    public bool Storage2On = true;
 
     List<GameObject> roomA = new List<GameObject>();
     List<GameObject> roomB = new List<GameObject>();
     List<GameObject> roomC = new List<GameObject>();
     List<GameObject> roomD = new List<GameObject>();
-    List<GameObject> sRoom = new List<GameObject>();
+    List<GameObject> sRoom1 = new List<GameObject>();
+    List<GameObject> sRoom2 = new List<GameObject>();
 
     public LightStates RoomA;
     public LightStates RoomB;
     public LightStates RoomC;
     public LightStates RoomD;
-    public LightStates StorageRooms;
+    public LightStates StorageRoom1;
+    public LightStates StorageRoom2;
 
     public void Awake()
     {
@@ -133,13 +136,15 @@ public class LightManager : MonoBehaviour
             RoomB21a, RoomB21b, RoomB22a, RoomB22b, RoomB23a, RoomB23b, RoomB24a, RoomB24b };
         roomC = new List<GameObject>() { RoomC1a, RoomC1b, RoomC2a, RoomC2b, RoomC3a, RoomC3b, RoomC4a, RoomC4b, RoomC5a, RoomC5b, RoomC6a, RoomC6b, RoomC7a, RoomC7b, RoomC8a, RoomC8b };
         roomD = new List<GameObject>() { RoomD1a, RoomD1b, RoomD2a, RoomD2b, RoomD3a, RoomD3b, RoomD4a, RoomD4b, RoomD5a, RoomD5b, RoomD6a, RoomD6b, RoomD7a, RoomD7b, RoomD8a, RoomD8b };
-        sRoom = new List<GameObject>() { SRoom1a, SRoom1b, SRoom2a, SRoom2b };
+        sRoom1 = new List<GameObject>() { SRoom1a, SRoom1b};
+        sRoom2 = new List<GameObject>() { SRoom2a, SRoom2b };
 
         RoomA = LightStates.LightOn;
         RoomB = LightStates.LightOn;
         RoomC = LightStates.LightOn;
         RoomD = LightStates.LightOn;
-        StorageRooms = LightStates.LightOn;
+        StorageRoom1 = LightStates.LightOn;
+        StorageRoom2 = LightStates.LightOn;
     }
 
     void TurnLightsOn(List<GameObject> room, ref bool On)
@@ -206,18 +211,28 @@ public class LightManager : MonoBehaviour
             default:
                 break;
         }
-        switch (StorageRooms)
+        switch (StorageRoom1)
         {
             case LightStates.LightOn:
-                TurnLightsOn(sRoom, ref StorageOn);
+                TurnLightsOn(sRoom1, ref Storage1On);
                 break;
             case LightStates.LightOff:
-                TurnLightsOff(sRoom, ref StorageOn);
+                TurnLightsOff(sRoom1, ref Storage1On);
                 break;
             default:
                 break;
         }
-
+        switch (StorageRoom2)
+        {
+            case LightStates.LightOn:
+                TurnLightsOn(sRoom2, ref Storage2On);
+                break;
+            case LightStates.LightOff:
+                TurnLightsOff(sRoom2, ref Storage2On);
+                break;
+            default:
+                break;
+        }
     }
 }
 

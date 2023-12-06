@@ -23,6 +23,7 @@ public class TorchControls : MonoBehaviour
     public float regenerateDuration = 5f;
     public bool torchOverheated = false;
     public bool torchOn = false;
+    public bool batteryLow = false;
 
     void Update()
     {
@@ -50,7 +51,11 @@ public class TorchControls : MonoBehaviour
             torchController.SetActive(true);
             torchStatus.TorchStatusOn();
         }
-        
+        if (torchOn && batteryLow)
+        {
+            BatteryLow(torchStatus.batteryFlashSpeed);
+        }
+
         // Turn Torch Off
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -63,6 +68,7 @@ public class TorchControls : MonoBehaviour
         if (torchOn)
         {
             torchOn = false;
+            batteryLow = false;
             torchController.SetActive(false);
             torchStatus.TorchStatusOff();
         }
@@ -80,6 +86,7 @@ public class TorchControls : MonoBehaviour
         if (torchOverheated)
         {
             torchOn = false;
+            batteryLow = false;
             torchController.SetActive(false);
             torchStatus.TorchStatusOverheated();
         }
@@ -88,5 +95,23 @@ public class TorchControls : MonoBehaviour
         {
             _torchstate = TorchStates.TorchOff;
         }
+    }
+
+    void BatteryLow(float batteryFlashSpeed)
+    {
+        StartCoroutine(IndicateBatteryLow(batteryFlashSpeed));
+    }
+
+    public IEnumerator IndicateBatteryLow(float delay)
+    {
+        if (torchStatus.black)
+        {
+            torchController.SetActive(true);
+        }
+        else
+        {
+            torchController.SetActive(false);
+        }
+        yield return new WaitForSeconds(delay);
     }
 }

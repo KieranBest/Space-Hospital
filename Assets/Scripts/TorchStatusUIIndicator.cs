@@ -9,8 +9,11 @@ public class TorchStatusUIIndicator : MonoBehaviour
     public TorchControls torchControls;
 
     private float flashSpeed = 0.33f;
+    private bool batteryFlash = false;
 
     public bool flashRed = false;
+    public float batteryFlashSpeed;
+    public bool black = false;
 
     private void Awake()
     {
@@ -44,5 +47,34 @@ public class TorchStatusUIIndicator : MonoBehaviour
         TorchStatus.GetComponent<Image>().color = new Color(0, 0, 0, 0.5f);
         yield return new WaitForSeconds(delay);
         flashRed = false;
+    }
+
+    public void TorchBatteryLow()
+    {
+        // If battery flashing is not active, set active
+        if (!batteryFlash)
+        {
+            // Define flash speed
+            batteryFlashSpeed = Random.Range(1, 10) / 10;
+
+            batteryFlash = true;
+            StartCoroutine(BatteryFlash(batteryFlashSpeed));
+        }
+}
+
+    IEnumerator BatteryFlash(float delay)
+    {
+        if (black)
+        {
+            TorchStatus.GetComponent<Image>().color = new Color(255, 252, 189, 0.5f);
+            black = false;
+        }
+        else
+        {
+            TorchStatus.GetComponent<Image>().color = new Color(0, 0, 0, 0.5f);
+            black = true;
+        }
+        yield return new WaitForSeconds(delay);
+        batteryFlash = false;
     }
 }

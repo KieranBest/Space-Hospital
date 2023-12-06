@@ -31,6 +31,12 @@ public class CircularProgressBar : MonoBehaviour
                 torchControls.torchOverheated = true;
                 torchControls._torchstate = TorchControls.TorchStates.TorchOverHeat;
             }
+            // When timer reaches 10% make flicker
+            if (indicatorTimer < (maxIndicatorTimer * 0.25))
+            {
+                torchControls.batteryLow = true;
+                torchStatus.TorchBatteryLow();
+            }
         }
         // Torch Off
         else
